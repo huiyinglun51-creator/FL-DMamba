@@ -270,8 +270,7 @@ def evaluate_episode_rtg(
     state_std = torch.from_numpy(state_std).to(device=device)
 
     state = env.reset()
-    if mode == 'noise':
-        state = state + np.random.normal(0, 0.1, size=state.shape)
+    
 
 
     states = torch.from_numpy(state).reshape(1, state_dim).to(device=device, dtype=torch.float32)
